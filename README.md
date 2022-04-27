@@ -7,3 +7,5 @@ This application is heavily based on other excellent password managers
 I've used in the past, including 1Password and especially
 [Passbolt](https://www.passbolt.com/), which I recently set up to manage
 passwords for a club on campus.
+
+**Do not store actual passwords using this web application!**
