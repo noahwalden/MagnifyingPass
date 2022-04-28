@@ -28,7 +28,6 @@ developers.
 - Rearrange forms
 - Clean up password display in vault and search
 - Delete passwords from vault
-- Error message on failed login
 - Button rearrangement
 - Hide passwords and add copy to clipboard button
 - Fuzzy find search suggestion dropdown keying off password names

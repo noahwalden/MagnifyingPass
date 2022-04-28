@@ -9,3 +9,11 @@
     </div>
     <button type="submit" class="btn btn-primary">Login</button>
 </form>
+
+<% if (loginFailed) { %>
+
+  <div class="alert alert-warning" style="margin: 30px 0px;" role="alert">
+    Login failed
+  </div>
+
+<% } %>

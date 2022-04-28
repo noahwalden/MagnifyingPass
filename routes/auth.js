@@ -27,6 +27,7 @@ router.use((req,res,next) => {
 
 
 router.get("/login", (req,res) => {
+  res.locals.loginFailed = false
   res.render("login")
 })
 
@@ -46,7 +47,8 @@ router.post('/login',
       } else {
         req.session.username = null
         req.session.user = user
-        res.redirect('/login')
+        res.locals.loginFailed = true
+        res.render('login')
       }
     }catch(e){
       next(e)
