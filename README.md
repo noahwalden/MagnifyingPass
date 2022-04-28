@@ -26,7 +26,6 @@ developers.
 
 - Allow password sharing between users
 - Rearrange forms
-- Add "Hello, user" button to nav linking to profile
 - Clean up password display in vault and search
 - Delete passwords from vault
 - Error message on failed login

@@ -157,6 +157,16 @@ app.get('/search/:searchQuery',
     }
 )
 
+app.get("/profile/:profileUsername", async (req, res, next) => {
+  try {
+    res.locals.profileData = await User.findOne({username:req.params.profileUsername})
+    console.log(res.locals.profileData)
+    res.render("profile");
+  } catch (e){
+    next(e);
+}
+});
+
   app.get("/password/:passwordID",
     isLoggedIn,
     async (req,res,next) => {
