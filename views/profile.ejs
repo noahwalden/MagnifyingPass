@@ -1,4 +1,14 @@
-<ul>
-    <li>Username: <%= profileData.username %></li>
-    <li>Email: <%= profileData.email %></li>
+<ul class="list-group">
+    <li class="list-group-item list-group-item">
+        <div class="d-flex flex-row justify-content-between">
+            <div><strong>Username</strong></div>
+            <div><%= profileData.username %></div>
+        </div>
+    </li>
+    <li class="list-group-item list-group-item">
+        <div class="d-flex flex-row justify-content-between">
+            <div><strong>Email</strong></div>
+            <div><%= profileData.email %></div>
+        </div>
+    </li>
 </ul>
