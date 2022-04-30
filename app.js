@@ -133,6 +133,19 @@ app.post('/create-password',
     }
 )
 
+app.get('/delete-password/',
+    isLoggedIn,
+    async (req,res,next) => {
+    try {
+        const {passwordID} = req.params.passwordID;
+        await Password.findByIdAndDelete(passwordID)
+        res.redirect('/vault')
+    } catch (e){
+        next(e);
+    }
+    }
+)
+
 app.post('/search',
     isLoggedIn,
     async (req,res,next) => {
@@ -175,6 +188,30 @@ app.get("/profile/:profileUsername", async (req, res, next) => {
         res.locals.password = await Password.findById(passwordID)
         console.log(res.locals.password)
         res.render('password')
+      } catch (e){
+        next(e);
+      }
+    }
+  )
+
+  app.get("/password/:passwordID/delete",
+    isLoggedIn,
+    async (req,res,next) => {
+      try{
+        res.locals.password = await Password.findById(req.params.passwordID)
+        res.render('confirm_password_deletion')
+      } catch (e){
+        next(e);
+      }
+    }
+  )
+
+  app.get("/delpass/:passwordID",
+    isLoggedIn,
+    async (req,res,next) => {
+      try{
+        await Password.findByIdAndDelete(req.params.passwordID)
+        res.redirect('/vault')
       } catch (e){
         next(e);
       }
