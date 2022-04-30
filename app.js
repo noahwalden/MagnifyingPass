@@ -194,6 +194,31 @@ app.get("/profile/:profileUsername", async (req, res, next) => {
     }
   )
 
+  app.get("/password/:passwordID/update",
+    isLoggedIn,
+    async (req,res,next) => {
+      try{
+        res.locals.password = await Password.findById(req.params.passwordID)
+        res.render('update_password')
+      } catch (e){
+        next(e);
+      }
+    }
+  )
+
+  app.post("/password/:passwordID/update",
+    isLoggedIn,
+    async (req,res,next) => {
+      try{
+        const {name,username,password,description,url} = req.body;
+        res.locals.password = await Password.findByIdAndUpdate(req.params.passwordID, {name,username,password,description,url})
+        res.redirect('/password/' + req.params.passwordID)
+      } catch (e){
+        next(e);
+      }
+    }
+  )
+
   app.get("/password/:passwordID/delete",
     isLoggedIn,
     async (req,res,next) => {
