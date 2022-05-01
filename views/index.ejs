@@ -1,16 +1,16 @@
 <% if (loggedIn) { %>
 
 <form method="post" action="/search">
-    <div class="form-group">
-      <label for="searchQuery">Search</label>
-      <input type="text" autofocus="autofocus" class="form-control" name="searchQuery" id="searchQuery" aria-describedby="searchHelp" placeholder="e.g. Heroku">
-      <small id="searchHelp" class="form-text text-muted">Search for a password.</small>
+    <div class="row">
+      <div class="col">
+        <input type="text" autofocus="autofocus" class="form-control" name="searchQuery" id="searchQuery" aria-describedby="searchHelp" placeholder="e.g. Heroku">
+        <small id="searchHelp" class="form-text text-muted">Search for a password.</small>
+      </div>
+      <div class="col col-md-auto">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-<a href="/create-password" class="btn btn-primary btn-lg" role="button" aria-disabled="false">Add Password</a>
-<a href="/vault" class="btn btn-primary btn-lg" role="button" aria-disabled="false">See Vault</a>
 
 <% } else { %>
 
