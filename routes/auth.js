@@ -58,13 +58,15 @@ router.post('/login',
 router.post('/signup',
   async (req,res,next) =>{
     try {
-      const {username,passphrase,email} = req.body
+      const {username,passphrase,email,firstName,lastName} = req.body
         const hash = crypto.createHash('sha256');
         hash.update(passphrase);
         const encrypted = hash.digest('hex')
         
         const user = new User(
           {username:username,
+           firstName:firstName,
+           lastName:lastName,
            passphrase:encrypted,
            email:email,
            updates:"updates" in req.body
