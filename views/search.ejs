@@ -1,10 +1,5 @@
-<% for (result of searchResults) { %>
-
-    <div class="card">
-        <div class="card-body">
-            Name: <%= result.name %>, Username: <%= result.username %>, Password: <%= result.password %>
-        </div>
-    </div>
-    
+<ul class="list-group">
+    <% for (result of searchResults) { %>
+        <a href="/password/<%= result._id %>" class="list-group-item list-group-item-action"><%= result.name %></a>
     <% } %>
-    
+</ul>
