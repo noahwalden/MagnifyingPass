@@ -9,6 +9,8 @@ passwords for a club on campus.
 **Do not store actual passwords using this web application!** This is a proof of
 concept and has not been properly secured for use in production.
 
+Demo video: https://brandeis.zoom.us/rec/share/lo2iXanbfPS3y6FVNCqfVasnXgIwAQTLbDF1gFI_RbCwUXxgoVXOiugYwy-IcAir.y7XrS66xb14L87in?startTime=1651508723000
+
 # Motivation
 
 This project was motivated by the fact that Passbolt was very deliberately built
