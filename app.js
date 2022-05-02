@@ -186,6 +186,8 @@ app.get("/profile/:profileUsername", async (req, res, next) => {
       try{
         const passwordID = req.params.passwordID
         res.locals.password = await Password.findById(passwordID)
+        res.locals.passwordOwner = await User.findById(res.locals.password.ownerID)
+        console.log("passwordOwner:", res.locals.passwordOwner)
         console.log(res.locals.password)
         res.render('password')
       } catch (e){
